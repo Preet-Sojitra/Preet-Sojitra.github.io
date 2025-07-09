@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Preet Sojitra | Projects</title>
+    <link href="output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-800 antialiased">
+    <!-- Main Container -->
+    <div class="container mx-auto max-w-3xl px-6 py-12">
+      <!-- Header -->
+      <header class="flex justify-between items-center mb-12">
+        <h1 class="text-2xl font-bold text-gray-900">Preet Sojitra</h1>
+        <!-- Navigation -->
+        <nav class="space-x-6 text-base">
+          <a href="main.html" class="text-gray-600 hover:text-red-600">About</a>
+          <a
+            href="main.html#publications"
+            class="text-gray-600 hover:text-red-600"
+            >Publications</a
+          >
+          <a href="projects.html" class="text-red-600">Projects</a>
+          <a
+            href="path/to/your-cv.pdf"
+            target="_blank"
+            class="text-gray-600 hover:text-red-600"
+            >Resume</a
+          >
+        </nav>
+      </header>
+
+      <main>
+        <section id="projects" class="mb-16">
+          <h2 class="text-2xl font-bold mb-4">Featured Projects</h2>
+          <div class="space-y-8">
+            <!-- Project 1: Depression Detection -->
+            <div class="border-l-4 border-red-500 pl-4 py-2">
+              <h3 class="text-lg font-bold">
+                Depression Detection through Speech Analysis
+              </h3>
+              <p class="mt-1">
+                An end-to-end research project to detect depression from speech
+                recordings using the DAIC-WOZ dataset. Systematically evaluated
+                a range of models, from classic CNNs (VGGNet, ResNet) to Vision
+                Transformers (ViT), on spectrograms and raw audio data.
+              </p>
+              <p class="mt-2 text-sm text-gray-600">
+                <strong>Accomplishment:</strong> Gained experience in the full
+                research pipeline, including feature engineering for audio,
+                comparative model benchmarking, and handling class imbalance.
+              </p>
+              <div class="mt-2 space-x-4">
+                <a
+                  href="https://github.com/Preet-Sojitra/depression_detection"
+                  target="_blank"
+                  class="text-red-600 hover:underline"
+                  >[GitHub]</a
+                >
+              </div>
+            </div>
+
+            <!-- Project 2: imgcv -->
+            <div class="border-l-4 border-red-500 pl-4 py-2">
+              <h3 class="text-lg font-bold">
+                imgcv: A Image Processing Library from Scratch
+              </h3>
+              <p class="mt-1">
+                Developed and published a Python package on PyPI that
+                re-implements core image processing OpenCV functions from the
+                ground up using only NumPy. The goal was to build a deep,
+                fundamental understanding of how computer vision and image
+                processing algorithms work under the hood.
+              </p>
+              <p class="mt-2 text-sm text-gray-600">
+                <strong>Accomplishment:</strong> Solidified my understanding of
+                algorithms for filtering, color space manipulation,
+                morphological operations, and edge detection.
+              </p>
+              <div class="mt-2 space-x-4">
+                <a
+                  href="https://github.com/Preet-Sojitra/imgcv
+                  target="_blank"
+                  class="text-red-600 hover:underline"
+                  >[GitHub]</a
+                >
+                <a
+                  href="https://pypi.org/project/imgcv/"
+                  target="_blank"
+                  class="text-red-600 hover:underline"
+                  >[PyPI Package]</a
+                >
+              </div>
+            </div>
+
+            <!-- Project 3: nanoGPT -->
+            <div class="border-l-4 border-red-500 pl-4 py-2">
+              <h3 class="text-lg font-bold">
+                nanoGPT: Building a Transformer from Scratch
+              </h3>
+              <p class="mt-1">
+                Implemented a decoder-only GPT-style language model from scratch
+                in PyTorch, training it to generate text in the style of
+                Shakespeare. This project was a deep dive into the fundamental
+                mechanics of the Transformer architecture.
+              </p>
+              <p class="mt-2 text-sm text-gray-600">
+                <strong>Accomplishment:</strong> Gained a code-level understanding
+                of self-attention, which I am now extending to train a similar
+                model on the more complex Sanskrit language.
+              </p>
+              <div class="mt-2 space-x-4">
+                <a
+                  href="https://www.kaggle.com/code/preetsojitra/nanogpt-decoder-only-transformer"
+                  target="_blank"
+                  class="text-red-600 hover:underline"
+                  >[Kaggle]</a
+                >
+              </div>
+            </div>
+
+            <!-- Project 4   -->
+            <div class="border-l-4 border-red-500 pl-4 py-2">
+              <h3 class="text-lg font-bold">
+                Micrograd: An Autograd Engine in Python
+              </h3>
+              <p class="mt-1">
+                A from-scratch implementation of a scalar autograd engine,
+                demystifying the backpropagation process used in neural
+                networks. Later extended to a PyTorch-like structure.
+              </p>
+              <p class="mt-2 text-sm text-gray-600">
+                <strong>Accomplishment:</strong> Developed a deep understanding of
+                how autograd works, including the mechanics of computing
+                gradients and the chain rule.
+              </p>
+              <div class="mt-2 space-x-4">
+                <a
+                  href="https://github.com/Preet-Sojitra/micrograd"
+                  target="_blank"
+                  class="text-red-600 hover:underline"
+                  >[GitHub]</a
+                >
+              </div>
+            </div>
+
+            <!-- Project 5-->
+            <div class="border-l-4 border-red-500 pl-4 py-2">
+              <h3 class="text-xl font-bold">
+                Chorale Music Generation with LSTMs
+              </h3>
+              <p class="mt-1">
+                Trained a Long Short-Term Memory (LSTM) network on a dataset of
+                Bach chorales to generate novel, harmonically coherent musical
+                sequences.
+              </p>
+              <p class="mt-2 text-sm text-gray-600">
+                <strong>Accomplishment:</strong> Gained insights into sequence
+                modeling and the unique challenges of generating structured
+                outputs like music.
+              </p>
+              <div class="mt-2 space-x-4">
+                <a
+                  href="https://colab.research.google.com/drive/10px1CvPJOasimDHS35sZPdv7I9jhQNf0?usp=sharing"
+                  target="_blank"
+                  class="text-red-600 hover:underline"
+                >
+                  [Colab Notebook]
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer / Contact Section -->
+      <footer class="text-center pt-8 border-t border-gray-200">
+        <p class="text-sm text-gray-400 mt-8">
+          © 2025 Preet Sojitra. Built with HTML & Tailwind CSS.
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
