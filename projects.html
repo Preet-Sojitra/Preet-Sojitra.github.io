@@ -22,10 +22,14 @@
     <div class="container mx-auto max-w-3xl px-6 py-12">
       <!-- Header -->
       <header class="flex justify-between items-center mb-12">
-        <h1 class="text-2xl font-bold text-gray-900">Preet Sojitra</h1>
+        <h1 class="text-2xl font-bold text-gray-900">
+          <a href="index.html"> Preet Sojitra </a>
+        </h1>
         <!-- Navigation -->
         <nav class="space-x-6 text-base">
-          <a href="index.html" class="text-gray-600 hover:text-red-600">About</a>
+          <a href="index.html" class="text-gray-600 hover:text-red-600"
+            >About</a
+          >
           <a
             href="index.html#publications"
             class="text-gray-600 hover:text-red-600"
@@ -33,7 +37,7 @@
           >
           <a href="projects.html" class="text-red-600">Projects</a>
           <a
-            href="path/to/your-cv.pdf"
+            href="https://drive.google.com/file/d/1EfdvTf7JVw5u8fHY8B9rRJi7ASCWCIof/view?usp=drive_link"
             target="_blank"
             class="text-gray-600 hover:text-red-600"
             >Resume</a
@@ -42,6 +46,7 @@
       </header>
 
       <main>
+        <!-- AI ML Projects -->
         <section id="projects" class="mb-16">
           <h2 class="text-2xl font-bold mb-4">Featured Projects</h2>
           <div class="space-y-8">
@@ -90,11 +95,12 @@
               </p>
               <div class="mt-2 space-x-4">
                 <a
-                  href="https://github.com/Preet-Sojitra/imgcv
+                  href="https://github.com/Preet-Sojitra/imgcv"
                   target="_blank"
                   class="text-red-600 hover:underline"
                   >[GitHub]</a
                 >
+
                 <a
                   href="https://pypi.org/project/imgcv/"
                   target="_blank"
@@ -116,9 +122,9 @@
                 mechanics of the Transformer architecture.
               </p>
               <p class="mt-2 text-sm text-gray-600">
-                <strong>Accomplishment:</strong> Gained a code-level understanding
-                of self-attention, which I am now extending to train a similar
-                model on the more complex Sanskrit language.
+                <strong>Accomplishment:</strong> Gained a code-level
+                understanding of self-attention, which I am now extending to
+                train a similar model on the more complex Sanskrit language.
               </p>
               <div class="mt-2 space-x-4">
                 <a
@@ -141,8 +147,8 @@
                 networks. Later extended to a PyTorch-like structure.
               </p>
               <p class="mt-2 text-sm text-gray-600">
-                <strong>Accomplishment:</strong> Developed a deep understanding of
-                how autograd works, including the mechanics of computing
+                <strong>Accomplishment:</strong> Developed a deep understanding
+                of how autograd works, including the mechanics of computing
                 gradients and the chain rule.
               </p>
               <div class="mt-2 space-x-4">
@@ -180,6 +186,236 @@
                 </a>
               </div>
             </div>
+
+            <!-- Project 6 -->
+            <div class="border-l-4 border-red-500 pl-4 py-2">
+              <h3 class="text-xl font-bold">
+                End-to-End News Classification with MLOps
+                <span
+                  class="ml-2 text-xs font-semibold bg-yellow-200 text-yellow-800 px-2 py-1 rounded-full align-middle"
+                >
+                  In Progress
+                </span>
+              </h3>
+              <p class="mt-1">
+                Building a full-stack text classification system for the AG News
+                dataset. This project moves beyond a simple notebook to create a
+                deployable, end-to-end MLOps pipeline, featuring custom
+                tokenizers and models built from scratch in PyTorch.
+              </p>
+              <p class="mt-2 text-sm text-gray-600">
+                <strong>Goal:</strong> To gain hands-on experience in MLOps,
+                CI/CD for machine learning, and to solidify core PyTorch
+                concepts by building a production-ready application.
+              </p>
+              <div class="mt-2 space-x-4">
+                <a
+                  href="https://github.com/Preet-Sojitra/agnews-classification"
+                  target="_blank"
+                  class="text-red-600 hover:underline"
+                >
+                  [GitHub Repo]
+                </a>
+              </div>
+            </div>
+
+            <!-- Project 7 -->
+            <div class="border-l-4 border-red-500 pl-4 py-2">
+              <h3 class="text-xl font-bold">
+                Fine-Grained Animal Classification
+                <span
+                  class="ml-2 text-xs font-semibold bg-yellow-200 text-yellow-800 px-2 py-1 rounded-full align-middle"
+                >
+                  In Progress
+                </span>
+              </h3>
+              <p class="mt-1">
+                Developing a classification model for a challenging dataset of
+                90 animal classes with a limited number of samples per class.
+                This project focuses on techniques to handle data scarcity and
+                achieve high accuracy in a fine-grained classification scenario.
+              </p>
+              <p class="mt-2 text-sm text-gray-600">
+                <strong>Goal:</strong> To explore and implement advanced
+                techniques for training robust models on datasets with long-tail
+                distributions and limited data.
+              </p>
+              <div class="mt-2 space-x-4">
+                <a
+                  href="https://github.com/Preet-Sojitra/animal-classificaion"
+                  target="_blank"
+                  class="text-red-600 hover:underline"
+                >
+                  [GitHub Repo]
+                </a>
+              </div>
+            </div>
+
+            <!-- Project 8 -->
+            <div class="border-l-4 border-red-500 pl-4 py-2">
+              <h3 class="text-xl font-bold">Multimodal AI Story Generator</h3>
+              <p class="mt-1">
+                A Streamlit application that generates a unique story from a
+                sequence of user-selected images. The pipeline scrapes images
+                based on user queries, generates descriptive captions for each
+                selected image using a Vision Transformer (ViT), and then feeds
+                the captions to a Mistral LLM to write a coherent narrative.
+              </p>
+              <p class="mt-2 text-sm text-gray-600">
+                <strong>Accomplishment:</strong> Successfully integrated
+                multiple AI models (vision and language) into a seamless,
+                interactive web application, demonstrating skills in building
+                full-stack multimodal systems.
+              </p>
+              <div class="mt-2 space-x-4">
+                <a
+                  href="https://youtu.be/3kPGzmmaWd4"
+                  target="_blank"
+                  class="text-red-600 hover:underline"
+                >
+                  [Demo]
+                </a>
+                <a
+                  href="https://github.com/Preet-Sojitra/GenZ-StoryWriter"
+                  target="_blank"
+                  class="text-red-600 hover:underline"
+                >
+                  [GitHub Repo]
+                </a>
+              </div>
+            </div>
+
+            <!-- Add more projects as needed -->
+          </div>
+        </section>
+
+        <!-- Web Dev Projects -->
+        <section id="web-dev-projects" class="mb-16">
+          <h2 class="text-2xl font-bold mb-4">Web Development Projects</h2>
+          <div class="space-y-8">
+            <!-- Project 1: Personal Portfolio Website -->
+            <div class="border-l-4 border-blue-500 pl-4 py-2">
+              <h3 class="text-xl font-bold">Sinkedin: A Social Media Parody</h3>
+              <p class="mt-1">
+                A satirical take on professional networking, described as
+                "LinkedIn's darker, funnier, and more honest cousin." This
+                project serves as a practical sandbox for implementing and
+                testing scalable system design concepts.
+              </p>
+              <p class="mt-2 text-sm text-gray-600">
+                <strong>Technologies:</strong> Next.js, React, Tailwind CSS,
+                Supabase, Vercel
+              </p>
+              <div class="mt-2 space-x-4">
+                <a
+                  href="https://sinkedin.app/"
+                  target="_blank"
+                  class="text-blue-600 hover:underline"
+                >
+                  [Live App]
+                </a>
+                <a
+                  href="https://github.com/Preet-Sojitra/sinkedin"
+                  target="_blank"
+                  class="text-blue-600 hover:underline"
+                >
+                  [GitHub Repo]
+                </a>
+              </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="border-l-4 border-blue-500 pl-4 py-2">
+              <h3 class="text-xl font-bold">
+                Kalasangam: An MR-Powered Artisan Marketplace
+              </h3>
+              <p class="mt-1">
+                An e-commerce platform connecting local artisans with customers,
+                featuring an integrated mixed reality (MR) experience that
+                allows users to virtually preview products. The platform also
+                includes a comprehensive dashboard for artisans to manage
+                listings and track sales analytics.
+              </p>
+              <p class="mt-2 text-sm text-gray-600">
+                <strong>Technologies:</strong> React, Zustand, Express.js, Flask
+              </p>
+              <div class="mt-2 space-x-4">
+                <a
+                  href="https://youtu.be/XJ2Ksomaruo"
+                  target="_blank"
+                  class="text-blue-600 hover:underline"
+                >
+                  [Demo Video]
+                </a>
+                <a
+                  href="https://github.com/Preet-Sojitra/Kalasangam"
+                  target="_blank"
+                  class="text-blue-600 hover:underline"
+                >
+                  [GitHub Repo]
+                </a>
+              </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="border-l-4 border-blue-500 pl-4 py-2">
+              <h3 class="text-xl font-bold">
+                Anuvaad Ratna: A Multilingual Translation Suite
+              </h3>
+              <p class="mt-1">
+                A full-stack web application that leverages machine learning for
+                language translation. It currently supports English-to-Hindi
+                text and PDF document translation, and includes a text-to-speech
+                (TTS) feature for the translated output.
+              </p>
+              <p class="mt-2 text-sm text-gray-600">
+                <strong>Technologies:</strong> Next.js, Flask, Tensorflow,
+                Hugging Face (Helsinki-NLP)
+              </p>
+              <div class="mt-2 space-x-4">
+                <a
+                  href="https://youtu.be/d3sqFWYGBTk?si=LiZHsLfnqdwJ4NRj"
+                  target="_blank"
+                  class="text-blue-600 hover:underline"
+                >
+                  [Demo]
+                </a>
+                <a
+                  href="https://github.com/Preet-Sojitra/AnuvaadRatna"
+                  target="_blank"
+                  class="text-blue-600 hover:underline"
+                >
+                  [GitHub Repo]
+                </a>
+              </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="border-l-4 border-blue-500 pl-4 py-2">
+              <h3 class="text-xl font-bold">
+                Loud and Clear: Freelance Client Website
+              </h3>
+              <p class="mt-1">
+                Designed and developed a professional, responsive website for a
+                freelance client to establish their online business presence.
+                The project involved the full lifecycle from client consultation
+                and requirements gathering to final deployment.
+              </p>
+              <p class="mt-2 text-sm text-gray-600">
+                <strong>Technologies:</strong> Next.js, Gsapio, Tailwind CSS
+              </p>
+              <div class="mt-2 space-x-4">
+                <a
+                  href="https://loudandclear.in/"
+                  target="_blank"
+                  class="text-blue-600 hover:underline"
+                >
+                  [View Live Site]
+                </a>
+              </div>
+            </div>
+
+            <!-- Additional Projects above this -->
           </div>
         </section>
       </main>
