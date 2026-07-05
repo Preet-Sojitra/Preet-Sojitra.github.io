@@ -15,55 +15,79 @@
       body {
         font-family: "Inter", sans-serif;
       }
+      /* Mobile nav */
+      #mobile-menu {
+        display: none;
+      }
+      #mobile-menu.open {
+        display: flex;
+      }
+      .hamburger span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: #374151;
+        margin: 5px 0;
+        transition: all 0.3s ease;
+      }
     </style>
   </head>
   <body class="bg-white text-gray-800 antialiased">
     <!-- Main Container -->
     <div class="container mx-auto max-w-3xl px-6 py-12">
       <!-- Header -->
-      <header class="flex justify-between items-center mb-12">
-        <h1 class="text-2xl font-bold text-gray-900">Preet Sojitra</h1>
-        <!-- Navigation -->
-        <nav class="space-x-6 text-base">
-          <a href="#publications" class="text-gray-600 hover:text-red-600"
-            >Publications</a
-          >
-          <a href="projects.html" class="text-gray-600 hover:text-red-600"
-            >Projects</a
-          >
-          <a href="https://preetsojitra.bearblog.dev/blog/" target="_blank" class="text-gray-600 hover:text-red-600"
-            >Blogs</a
-          >
-          <a
-            href="https://drive.google.com/file/d/1ukRQQrkv8llnHhzTtDpWGMEVDlPvptyk/view?usp=drive_link"
-            target="_blank"
-            class="text-gray-600 hover:text-red-600"
-            >Resume</a
-          >
+      <header class="mb-12">
+        <div class="flex justify-between items-center">
+          <h1 class="text-2xl font-bold text-gray-900">Preet Sojitra</h1>
+          <!-- Desktop Navigation -->
+          <nav class="hidden md:flex space-x-6 text-base">
+            <a href="#publications" class="text-gray-600 hover:text-red-600">Publications</a>
+            <a href="projects.html" class="text-gray-600 hover:text-red-600">Projects</a>
+            <a href="https://preetsojitra.bearblog.dev/blog/" target="_blank" class="text-gray-600 hover:text-red-600">Blog</a>
+            <a href="https://drive.google.com/file/d/1ukRQQrkv8llnHhzTtDpWGMEVDlPvptyk/view?usp=drive_link" target="_blank" class="text-gray-600 hover:text-red-600">Resume</a>
+          </nav>
+          <!-- Hamburger Button (mobile only) -->
+          <button id="hamburger-btn" class="md:hidden hamburger flex flex-col justify-center items-center p-1" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        <!-- Mobile Navigation Dropdown -->
+        <nav id="mobile-menu" class="flex-col gap-3 mt-4 md:hidden text-base">
+          <a href="#publications" class="text-gray-600 hover:text-red-600">Publications</a>
+          <a href="projects.html" class="text-gray-600 hover:text-red-600">Projects</a>
+          <a href="https://preetsojitra.bearblog.dev/blog/" target="_blank" class="text-gray-600 hover:text-red-600">Blog</a>
+          <a href="https://drive.google.com/file/d/1ukRQQrkv8llnHhzTtDpWGMEVDlPvptyk/view?usp=drive_link" target="_blank" class="text-gray-600 hover:text-red-600">Resume</a>
         </nav>
       </header>
 
       <main>
         <!-- ====== About Me Section ====== -->
         <section id="about" class="mb-16">
-          <div class="flex flex-col md:flex-row items-start gap-8">
-            <!-- Text content on the left -->
-            <div class="flex-grow md:basis-2/3">
-              <h2 class="text-2xl font-bold mb-4">About Me</h2>
-
-              <p class="mb-4 text-justify">
-                Hello! I'm a current Master's student in Computer Science at UT
-                Dallas. I began my journey in tech building websites, but my
-                curiosity soon led me to the fields of AI and Machine Learning.
-                Today, my goal is to build systems with the ability to
-                understand language and interpret the visual world.
+          <h2 class="text-2xl font-bold mb-4">About Me</h2>
+          <!-- Mobile: photo centered on top, then text below. Desktop: text left, photo right -->
+          <div class="flex flex-col md:flex-row md:items-start gap-8">
+            <!-- Profile Picture: centered on mobile, right-aligned on desktop -->
+            <div class="flex justify-center md:hidden flex-shrink-0">
+              <div class="w-36 h-36 rounded-full overflow-hidden shadow-lg flex-shrink-0" style="border-radius: 50%;">
+                <img
+                  src="photo.jpg"
+                  alt="A photo of Preet Sojitra"
+                  class="w-full h-full object-cover"
+                  style="object-position: 50% 20%; transform: scale(1.3);"
+                />
+              </div>
+            </div>
+            <!-- Text content -->
+            <div class="flex-grow md:basis-2/3 w-full">
+              <p class="mb-4">
+                I'm a 2nd-year Master's student in Computer Science at UT Dallas, working on my master's thesis with
+                <a href="https://www.yapengtian.com/" target="_blank" class="text-red-600 hover:underline">Prof. Yapeng Tian</a>.
+                My research sits at the intersection of Computer Vision and NLP — I'm particularly excited about multimodal learning and how vision, language, and audio can be jointly understood.
               </p>
-              <p class="mb-4 text-justify">
-                I am focused on the intersection of Computer Vision and Natural
-                Language Processing. I enjoy working on a range of projects,
-                from fine-tuning large language models to creating systems that
-                process images and audio. I value clean, well-structured code
-                and hold a firm belief in learning by building.
+              <p class="mb-4">
+                Outside of research, I love exploring new hobbies and staying active. These days you'll find me social dancing, hunting for great cafes, or playing pickleball and badminton.
               </p>
 
               <!-- "Contact Me" block -->
@@ -99,44 +123,21 @@
                 </div>
               </div>
             </div>
-            <!-- Profile Picture -->
-            <div
-              class="md:basis-1/3 flex justify-center md:justify-end md:self-center md:mt-[-4rem]"
-            >
-              <img
-                src="photo.jpeg"
-                alt="A photo of Preet Sojitra"
-                class="w-32 h-32 md:w-48 md:h-48 rounded-full object-cover shadow-lg"
-              />
+            <!-- Profile Picture (desktop only, right side) -->
+            <div class="hidden md:flex md:basis-1/3 justify-end self-start mt-1 flex-shrink-0">
+              <div class="w-48 h-48 rounded-full overflow-hidden shadow-lg flex-shrink-0" style="border-radius: 50%;">
+                <img
+                  src="photo.jpg"
+                  alt="A photo of Preet Sojitra"
+                  class="w-full h-full object-cover"
+                  style="object-position: 50% 20%; transform: scale(1.2);"
+                />
+              </div>
             </div>
           </div>
         </section>
 
-        <!-- ====== Research Interests Section ====== -->
-        <section id="research" class="mb-16">
-          <h2 class="text-2xl font-bold mb-4">Research Interests</h2>
-          <p class="mb-4">
-            I am fascinated by the challenge of creating machines that can
-            perceive and reason about the world in a holistic way, much like
-            humans do. My primary research interest, therefore, lies in
-            Multimodal Machine Learning, which integrates different data types
-            like vision, language, and audio.
-          </p>
-          <p class="mb-4">
-            My previous work with audio data, such as in "Depression Detection
-            through Speech Analysis" and time-series classification, has given
-            me a solid foundation. I am now eager to expand upon this by
-            exploring how visual and linguistic information can be combined to
-            create more robust and context-aware AI systems
-          </p>
-          <p>
-            As a thesis-track Master's student, I am actively seeking
-            opportunities to contribute to ongoing lab projects in these areas.
-            I am a dedicated and fast learner, eager to engage with challenging
-            research questions and support the lab's goals through meaningful
-            and consistent work.
-          </p>
-        </section>
+
 
         <!-- ====== Publications Section ====== -->
         <section id="publications" class="mb-16">
@@ -181,6 +182,56 @@
           <h2 class="text-2xl font-bold mb-4">Experience</h2>
 
           <div class="space-y-12">
+
+            <!-- CVMC Lab -->
+            <div class="border-l-4 border-gray-500 pl-4 py-2">
+              <h3 class="text-lg font-bold">
+                Student Collaborator @ Computer Vision and Multimodal Computing Lab, UTD
+              </h3>
+              <p class="text-sm text-gray-600">September 2025 - Present · Supervisor: 
+                <a href="https://www.yapengtian.com/" target="_blank" class="text-red-600 hover:underline">Prof. Yapeng Tian</a></p>
+              <div class="mt-4">
+                <strong>Project: Large-Scale Audio-Visual Dataset Pipeline</strong>
+                <ul class="list-disc list-inside mt-2 text-gray-700 space-y-1">
+                  <li>
+                    Building a large-scale, high-quality audio-visual dataset for
+                    training generative models, with a focus on curation at scale.
+                  </li>
+                  <li>
+                    Designed and implemented a distributed filtering and processing
+                    pipeline on the UTD HPC cluster using SLURM and parallel I/O,
+                    handling hundreds of thousands of audio-video samples.
+                  </li>
+                  <li>
+                    Next phase: training and evaluating diffusion-based
+                    audio-visual generation models on the curated dataset.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- HPC Center -->
+            <div class="border-l-4 border-gray-500 pl-4 py-2">
+              <h3 class="text-lg font-bold">
+                Student Assistant @ HPC Center, UTD
+              </h3>
+              <p class="text-sm text-gray-600">May 2025 - Present · Part-Time</p>
+              <ul class="list-disc list-inside mt-2 text-gray-700 space-y-1">
+                <li>
+                  Support researchers in debugging HPC workflows, MPI/OpenMPI
+                  configs, CUDA environment setup, and SLURM job failures.
+                </li>
+                <li>
+                  Work on cluster operations including job scheduling, resource
+                  allocation, and parallel programming best practices.
+                </li>
+                <li>
+                  Primary areas of expertise: SLURM, OpenMPI, CUDA, and
+                  distributed/parallel programming.
+                </li>
+              </ul>
+            </div>
+
             <!-- Experience 1: 9series -->
             <div class="border-l-4 border-gray-500 pl-4 py-2">
               <h3 class="text-lg font-bold">
@@ -272,6 +323,68 @@
         <section id="projects" class="mb-16">
           <h2 class="text-2xl font-bold mb-4">Featured Projects</h2>
           <div class="space-y-8">
+
+             <!-- Echo-ViLD -->
+            <div class="border-l-4 border-red-500 pl-4 py-2">
+              <h3 class="text-lg font-bold">
+                Echo-ViLD: Zero-Shot Acoustic Object Localization
+              </h3>
+              <p class="text-xs text-gray-500 mt-1">CS 6384 — Computer Vision, UTD</p>
+              <p class="mt-2 text-gray-700">
+                Extended ViLD (open-vocabulary object detection) by replacing CLIP with
+                Meta's PEAV (Perception Audio-Visual-Text) foundation model, enabling
+                a tri-modal detection framework where users can query with <em>audio</em>
+                instead of text. A custom Segment-Guided Distillation pipeline uses SAM
+                to produce background-free, mask-accurate embeddings as teacher targets, eliminating the noisy rectangular crop artifacts that degrade standard
+                OVD distillation.
+              </p>
+              <p class="mt-2 text-gray-700">
+                The result is true Zero-Shot Acoustic Object Localization: given a
+                <code>.wav</code> audio clip, the model localizes the sounding object
+                in an image with no category-specific training. Validated on a 5K COCO
+                subset (resource-constrained), with results on par with baseline ViLD.
+              </p>
+              <div class="mt-2 space-x-4">
+                <a href="https://github.com/Preet-Sojitra/Echo-ViLD" target="_blank"
+                  class="text-red-600 hover:underline">[GitHub]</a>
+                  <a href="https://youtu.be/H-bUSUaLqjo" target="_blank"
+                  class="text-red-600 hover:underline">[Demo]</a>
+                <a href="https://github.com/Preet-Sojitra/Echo-ViLD/blob/main/Final-Report.pdf" target="_blank"
+                  class="text-red-600 hover:underline">[Report]</a>
+
+              </div>
+            </div>
+
+            <!-- Adaptive Speculative Decoding -->
+            <div class="border-l-4 border-red-500 pl-4 py-2">
+              <h3 class="text-lg font-bold">
+                Adaptive Speculative Decoding for LLM Inference
+              </h3>
+              <p class="text-xs text-gray-500 mt-1">CS 6320 — NLP, UTD</p>
+              <p class="mt-2 text-gray-700">
+                Built a speculative decoding engine from scratch in PyTorch targeting
+                Python code generation. Standard speculative decoding uses a small
+                draft model to speculatively generate tokens that a larger target model
+                then verifies, fast when accepted, wasted compute when not.
+              </p>
+              <p class="mt-2 text-gray-700">
+                Introduced two optimizations: <strong>Teacher-Student Alignment</strong>, aligning the draft model's distribution to the target via top-K
+                KL-divergence loss to directly improve token acceptance rate (α)  and
+                <strong>Dynamic Lookahead Halting</strong> , a lightweight 2-layer MLP
+                trained on draft entropy and token confidence that halts speculation
+                early when uncertainty is high, cutting wasted FLOPs. Both hypotheses
+                were experimentally confirmed.
+              </p>
+              <div class="mt-2 space-x-4">
+                <a href="https://github.com/Preet-Sojitra/Qwen-Speculative-Distillation" target="_blank"
+                  class="text-red-600 hover:underline">[GitHub]</a>
+                  <a href="https://youtu.be/F3jK3KYNLcY" target="_blank"
+                  class="text-red-600 hover:underline">[Demo]</a>
+                <a href="https://github.com/Preet-Sojitra/Qwen-Speculative-Distillation/blob/main/Final-Report.pdf" target="_blank"
+                  class="text-red-600 hover:underline">[Report]</a>
+              </div>
+            </div>
+
             <!-- Project 1: Depression Detection -->
             <div class="border-l-4 border-red-500 pl-4 py-2">
               <h3 class="text-lg font-bold">
@@ -298,64 +411,6 @@
               </div>
             </div>
 
-            <!-- Project 2: imgcv -->
-            <div class="border-l-4 border-red-500 pl-4 py-2">
-              <h3 class="text-lg font-bold">
-                imgcv: A Image Processing Library from Scratch
-              </h3>
-              <p class="mt-1">
-                Developed and published a Python package on PyPI that
-                re-implements core image processing OpenCV functions from the
-                ground up using only NumPy. The goal was to build a deep,
-                fundamental understanding of how computer vision and image
-                processing algorithms work under the hood.
-              </p>
-              <p class="mt-2 text-sm text-gray-600">
-                <strong>Accomplishment:</strong> Solidified my understanding of
-                algorithms for filtering, color space manipulation,
-                morphological operations, and edge detection.
-              </p>
-              <div class="mt-2 space-x-4">
-                <a
-                  href="https://github.com/Preet-Sojitra/imgcv"
-                  target="_blank"
-                  class="text-red-600 hover:underline"
-                  >[GitHub]</a
-                >
-                <a
-                  href="https://pypi.org/project/imgcv/"
-                  target="_blank"
-                  class="text-red-600 hover:underline"
-                  >[PyPI Package]</a
-                >
-              </div>
-            </div>
-
-            <!-- Project 3: nanoGPT -->
-            <div class="border-l-4 border-red-500 pl-4 py-2">
-              <h3 class="text-lg font-bold">
-                nanoGPT: Building a Transformer from Scratch
-              </h3>
-              <p class="mt-1">
-                Implemented a decoder-only GPT-style language model from scratch
-                in PyTorch, training it to generate text in the style of
-                Shakespeare. This project was a deep dive into the fundamental
-                mechanics of the Transformer architecture.
-              </p>
-              <p class="mt-2 text-sm text-gray-600">
-                <strong>Accomplishment:</strong> Gained a code-level
-                understanding of self-attention, which I am now extending to
-                train a similar model on the more complex Sanskrit language.
-              </p>
-              <div class="mt-2 space-x-4">
-                <a
-                  href="https://www.kaggle.com/code/preetsojitra/nanogpt-decoder-only-transformer"
-                  target="_blank"
-                  class="text-red-600 hover:underline"
-                  >[Kaggle]</a
-                >
-              </div>
-            </div>
           </div>
           <div class="text-center mt-8">
             <a
@@ -374,5 +429,12 @@
         </p>
       </footer>
     </div>
+  <script>
+    const btn = document.getElementById('hamburger-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('open');
+    });
+  </script>
   </body>
 </html>

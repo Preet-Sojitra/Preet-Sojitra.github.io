@@ -15,33 +15,54 @@
       body {
         font-family: "Inter", sans-serif;
       }
+      /* Mobile nav */
+      #mobile-menu {
+        display: none;
+      }
+      #mobile-menu.open {
+        display: flex;
+      }
+      .hamburger span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: #374151;
+        margin: 5px 0;
+        transition: all 0.3s ease;
+      }
     </style>
   </head>
   <body class="bg-white text-gray-800 antialiased">
     <!-- Main Container -->
     <div class="container mx-auto max-w-3xl px-6 py-12">
       <!-- Header -->
-      <header class="flex justify-between items-center mb-12">
-        <h1 class="text-2xl font-bold text-gray-900">
-          <a href="index.html"> Preet Sojitra </a>
-        </h1>
-        <!-- Navigation -->
-        <nav class="space-x-6 text-base">
-          <a href="index.html" class="text-gray-600 hover:text-red-600"
-            >About</a
-          >
-          <a
-            href="index.html#publications"
-            class="text-gray-600 hover:text-red-600"
-            >Publications</a
-          >
+      <header class="mb-12">
+        <div class="flex justify-between items-center">
+          <h1 class="text-2xl font-bold text-gray-900">
+            <a href="index.html">Preet Sojitra</a>
+          </h1>
+          <!-- Desktop Navigation -->
+          <nav class="hidden md:flex space-x-6 text-base">
+            <a href="index.html" class="text-gray-600 hover:text-red-600">About</a>
+            <a href="index.html#publications" class="text-gray-600 hover:text-red-600">Publications</a>
+            <a href="projects.html" class="text-red-600">Projects</a>
+            <a href="https://preetsojitra.bearblog.dev/blog/" target="_blank" class="text-gray-600 hover:text-red-600">Blog</a>
+            <a href="https://drive.google.com/file/d/1EfdvTf7JVw5u8fHY8B9rRJi7ASCWCIof/view?usp=drive_link" target="_blank" class="text-gray-600 hover:text-red-600">Resume</a>
+          </nav>
+          <!-- Hamburger Button (mobile only) -->
+          <button id="hamburger-btn" class="md:hidden hamburger flex flex-col justify-center items-center p-1" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        <!-- Mobile Navigation Dropdown -->
+        <nav id="mobile-menu" class="flex-col gap-3 mt-4 md:hidden text-base">
+          <a href="index.html" class="text-gray-600 hover:text-red-600">About</a>
+          <a href="index.html#publications" class="text-gray-600 hover:text-red-600">Publications</a>
           <a href="projects.html" class="text-red-600">Projects</a>
-          <a
-            href="https://drive.google.com/file/d/1EfdvTf7JVw5u8fHY8B9rRJi7ASCWCIof/view?usp=drive_link"
-            target="_blank"
-            class="text-gray-600 hover:text-red-600"
-            >Resume</a
-          >
+          <a href="https://preetsojitra.bearblog.dev/blog/" target="_blank" class="text-gray-600 hover:text-red-600">Blog</a>
+          <a href="https://drive.google.com/file/d/1EfdvTf7JVw5u8fHY8B9rRJi7ASCWCIof/view?usp=drive_link" target="_blank" class="text-gray-600 hover:text-red-600">Resume</a>
         </nav>
       </header>
 
@@ -50,6 +71,96 @@
         <section id="projects" class="mb-16">
           <h2 class="text-2xl font-bold mb-4">Featured Projects</h2>
           <div class="space-y-8">
+
+            <!-- Echo-ViLD -->
+            <div class="border-l-4 border-red-500 pl-4 py-2">
+              <h3 class="text-lg font-bold">
+                Echo-ViLD: Zero-Shot Acoustic Object Localization
+              </h3>
+              <p class="text-xs text-gray-500 mt-1">CS 6384 — Computer Vision, UTD</p>
+              <p class="mt-2 text-gray-700">
+                Extended ViLD (open-vocabulary object detection) by replacing CLIP with
+                Meta's PEAV (Perception Audio-Visual-Text) foundation model, enabling
+                a tri-modal detection framework where users can query with <em>audio</em>
+                instead of text. A custom Segment-Guided Distillation pipeline uses SAM
+                to produce background-free, mask-accurate embeddings as teacher targets, eliminating the noisy rectangular crop artifacts that degrade standard
+                OVD distillation.
+              </p>
+              <p class="mt-2 text-gray-700">
+                The result is true Zero-Shot Acoustic Object Localization: given a
+                <code>.wav</code> audio clip, the model localizes the sounding object
+                in an image with no category-specific training. Validated on a 5K COCO
+                subset (resource-constrained), with results on par with baseline ViLD.
+              </p>
+              <div class="mt-2 space-x-4">
+                <a href="https://github.com/Preet-Sojitra/Echo-ViLD" target="_blank"
+                  class="text-red-600 hover:underline">[GitHub]</a>
+                  <a href="https://youtu.be/H-bUSUaLqjo" target="_blank"
+                  class="text-red-600 hover:underline">[Demo]</a>
+                <a href="https://github.com/Preet-Sojitra/Echo-ViLD/blob/main/Final-Report.pdf" target="_blank"
+                  class="text-red-600 hover:underline">[Report]</a>
+
+              </div>
+            </div>
+
+            <!-- Adaptive Speculative Decoding -->
+            <div class="border-l-4 border-red-500 pl-4 py-2">
+              <h3 class="text-lg font-bold">
+                Adaptive Speculative Decoding for LLM Inference
+              </h3>
+              <p class="text-xs text-gray-500 mt-1">CS 6320 — NLP, UTD</p>
+              <p class="mt-2 text-gray-700">
+                Built a speculative decoding engine from scratch in PyTorch targeting
+                Python code generation. Standard speculative decoding uses a small
+                draft model to speculatively generate tokens that a larger target model
+                then verifies, fast when accepted, wasted compute when not.
+              </p>
+              <p class="mt-2 text-gray-700">
+                Introduced two optimizations: <strong>Teacher-Student Alignment</strong>, aligning the draft model's distribution to the target via top-K
+                KL-divergence loss to directly improve token acceptance rate (α)  and
+                <strong>Dynamic Lookahead Halting</strong> , a lightweight 2-layer MLP
+                trained on draft entropy and token confidence that halts speculation
+                early when uncertainty is high, cutting wasted FLOPs. Both hypotheses
+                were experimentally confirmed.
+              </p>
+              <div class="mt-2 space-x-4">
+                <a href="https://github.com/Preet-Sojitra/Qwen-Speculative-Distillation" target="_blank"
+                  class="text-red-600 hover:underline">[GitHub]</a>
+                  <a href="https://youtu.be/F3jK3KYNLcY" target="_blank"
+                  class="text-red-600 hover:underline">[Demo]</a>
+                <a href="https://github.com/Preet-Sojitra/Qwen-Speculative-Distillation/blob/main/Final-Report.pdf" target="_blank"
+                  class="text-red-600 hover:underline">[Report]</a>
+              </div>
+            </div>
+
+            <!-- SVMLite -->
+            <div class="border-l-4 border-red-500 pl-4 py-2">
+            <h3 class="text-lg font-bold">SVMLite</h3>
+            <p class="text-xs text-gray-500 mt-1">CS 6375 — Machine Learning, UTD</p>
+            <p class="mt-2 text-gray-700">
+              A lightweight Python SVM library built from scratch for educational and
+              experimental use. Implements both primal (hard/soft margin via SGD) and
+              dual (QP-based via cvxopt) formulations, with full kernel support
+              (linear, polynomial, RBF, sigmoid, custom) and the SMO optimization
+              algorithm.
+            </p>
+            <p class="mt-2 text-gray-700">
+              Supports multiclass classification via One-vs-One and One-vs-All
+              strategies, with grid search and cross-validation for model selection.
+              The goal was to build a thorough understanding of SVM internals rather
+              than wrap scikit-learn.
+            </p>
+            <div class="mt-2 space-x-4">
+              <a href="https://github.com/Preet-Sojitra/SVMLite" target="_blank"
+                class="text-red-600 hover:underline">[GitHub]</a>
+              <a href="https://pypi.org/project/svmlite/" target="_blank"
+                class="text-red-600 hover:underline">[PyPI]</a>
+              <a href="https://drive.google.com/file/d/1mEAilQojR0T8nGhrNu0BiGJ8jjtfr7Fg/view?usp=sharing" target="_blank"
+                class="text-red-600 hover:underline">[Report]</a>
+            </div>
+          </div>
+
+            
             <!-- Project 1: Depression Detection -->
             <div class="border-l-4 border-red-500 pl-4 py-2">
               <h3 class="text-lg font-bold">
@@ -423,9 +534,16 @@
       <!-- Footer / Contact Section -->
       <footer class="text-center pt-8 border-t border-gray-200">
         <p class="text-sm text-gray-400 mt-8">
-          © 2025 Preet Sojitra. Built with HTML & Tailwind CSS.
+          © 2025 Preet Sojitra. Built with HTML &amp; Tailwind CSS.
         </p>
       </footer>
     </div>
+  <script>
+    const btn = document.getElementById('hamburger-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('open');
+    });
+  </script>
   </body>
 </html>
